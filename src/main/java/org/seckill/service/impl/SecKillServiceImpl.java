@@ -68,6 +68,7 @@ public class SecKillServiceImpl implements SecKillService {
         return md5;
     }
 
+    @Transactional
     public SecKillExecution executeSecKill(long seckillId, long userPhone, String md5) throws SecKillException {
         if (md5 == null || !md5.equals(getMd5(seckillId))) {
             throw new SecKillException("seckill data rewrite");
