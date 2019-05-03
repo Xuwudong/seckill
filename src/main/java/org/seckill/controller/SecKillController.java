@@ -77,7 +77,7 @@ public class SecKillController {
             return new SecKillResult<SecKillExecution>(false, "未注册");
         }
         try {
-            SecKillExecution secKillExecution = secKillService.executeSecKill(seckillId, userPhone, md5);
+            SecKillExecution secKillExecution = secKillService.executeSecKillByProducure(seckillId, userPhone, md5);
             result = new SecKillResult<SecKillExecution>(true, secKillExecution);
         } catch (RepeatKillException e) {
             SecKillExecution secKillExecution = new SecKillExecution(seckillId, SecKillStateEnum.REPEAT_KILL);

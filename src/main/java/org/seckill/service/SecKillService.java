@@ -35,5 +35,16 @@ public interface SecKillService {
      */
     SecKillExecution executeSecKill(long seckillId, long userPhone, String md5)
             throws SecKillException;
+
+    /**
+     * 执行秒杀接口
+     *
+     * @param seckillId
+     * @param userPhone
+     * @param md5
+     * @return
+     * @throws SecKillException
+     */
+    SecKillExecution executeSecKillByProducure(long seckillId, long userPhone, String md5);
 }
 

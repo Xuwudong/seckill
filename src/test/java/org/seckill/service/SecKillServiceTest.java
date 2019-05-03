@@ -70,4 +70,16 @@ public class SecKillServiceTest {
         }
     }
 
+    @Test
+    public void executeSecKillByProducure() {
+        long id = 1001L;
+        Exposer exposer = secKillService.exportSecKillUrl(id);
+        if (exposer != null) {
+            String md5 = exposer.getMd5();
+            SecKillExecution secKillExecution =
+                    secKillService.executeSecKillByProducure(id, 18813294789L, md5);
+            System.out.println(secKillExecution);
+        }
+    }
+
 }
